@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wissance.J4Net.Stub", "Wiss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wissance.J4Net.Gui", "Wissance.J4Net.Gui\Wissance.J4Net.Gui.csproj", "{47EFE004-3FB1-4E96-9A11-5DCE482A059C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wissance.J4Net.Reflection", "Wissance.J4Net.Reflection\Wissance.J4Net.Reflection.csproj", "{81F17499-6F65-4DFF-BBE1-3F12F03852D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{47EFE004-3FB1-4E96-9A11-5DCE482A059C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47EFE004-3FB1-4E96-9A11-5DCE482A059C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47EFE004-3FB1-4E96-9A11-5DCE482A059C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F17499-6F65-4DFF-BBE1-3F12F03852D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F17499-6F65-4DFF-BBE1-3F12F03852D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F17499-6F65-4DFF-BBE1-3F12F03852D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F17499-6F65-4DFF-BBE1-3F12F03852D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
