@@ -42,7 +42,11 @@ using System.Reflection;
 using Wissance.J4Net.Reflection.Attributes;
 using Wissance.J4Net.Reflection.Binders;
 
-namespace Wissance.J4Net.Reflection
+// type selection
+using BindingFlags = Wissance.J4Net.Reflection.Binders.BindingFlags;
+using ICustomAttributeProvider = Wissance.J4Net.Reflection.Attributes.ICustomAttributeProvider;
+
+namespace Wissance.J4Net.Reflection.Methods
 {
     public abstract class MemberInfo : ICustomAttributeProvider
     {
@@ -109,7 +113,7 @@ namespace Wissance.J4Net.Reflection
         
         public string Name { get; internal set; }
         public Type DeclaringType { get; internal set; }
-        //public abstract MemberTypes MemberType { get; }
+        public abstract MemberTypes MemberType { get; }
         public int MetadataToken { get; private set; }
         
         /// <summary>

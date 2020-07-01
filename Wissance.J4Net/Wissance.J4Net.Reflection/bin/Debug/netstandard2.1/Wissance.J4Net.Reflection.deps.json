@@ -1,0 +1,24 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Wissance.J4Net.Reflection/1.0.0": {
+        "runtime": {
+          "Wissance.J4Net.Reflection.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Wissance.J4Net.Reflection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
