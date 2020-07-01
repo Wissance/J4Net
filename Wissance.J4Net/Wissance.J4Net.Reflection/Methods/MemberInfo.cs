@@ -38,9 +38,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Wissance.J4Net.Reflection.Attributes;
 using Wissance.J4Net.Reflection.Binders;
+using Wissance.J4Net.Reflection.Members;
 
 // type selection
 using BindingFlags = Wissance.J4Net.Reflection.Binders.BindingFlags;

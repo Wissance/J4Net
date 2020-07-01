@@ -1,6 +1,8 @@
 using Wissance.J4Net.Reflection.Methods;
+using Wissance.J4Net.Reflection.Binders;
+using Wissance.J4Net.Reflection.Methods;
 
-namespace Wissance.J4Net.Reflection
+namespace Wissance.J4Net.Reflection.Fields
 {
     public abstract class FieldInfo : MemberInfo
     {
@@ -84,14 +86,14 @@ namespace Wissance.J4Net.Reflection
 			get { return (Attributes & FieldAttributes.PinvokeImpl) != 0; }
 		}
 
-		public virtual FieldInfo __GetFieldOnTypeDefinition()
+		public virtual FieldInfo GetFieldOnTypeDefinition()
 		{
 			return this;
 		}
 
-		public abstract bool __TryGetFieldOffset(out int offset);
+		public abstract bool TryGetFieldOffset(out int offset);
 
-		public bool __TryGetFieldMarshal(out FieldMarshal fieldMarshal)
+		public bool TryGetFieldMarshal(out FieldMarshal fieldMarshal)
 		{
 			return FieldMarshal.ReadFieldMarshal(this.Module, GetCurrentToken(), out fieldMarshal);
 		}
@@ -128,7 +130,7 @@ namespace Wissance.J4Net.Reflection
 			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_MarshalAsAttribute))
 			{
 				FieldMarshal spec;
-				if (__TryGetFieldMarshal(out spec))
+				if (TryGetFieldMarshal(out spec))
 				{
 					list.Add(CustomAttributeData.CreateMarshalAsPseudoCustomAttribute(module, spec));
 				}
@@ -136,7 +138,7 @@ namespace Wissance.J4Net.Reflection
 			if (attributeType == null || attributeType.IsAssignableFrom(module.universe.System_Runtime_InteropServices_FieldOffsetAttribute))
 			{
 				int offset;
-				if (__TryGetFieldOffset(out offset))
+				if (TryGetFieldOffset(out offset))
 				{
 					list.Add(CustomAttributeData.CreateFieldOffsetPseudoCustomAttribute(module, offset));
 				}
