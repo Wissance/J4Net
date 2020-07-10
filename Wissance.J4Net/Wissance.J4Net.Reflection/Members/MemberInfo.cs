@@ -46,7 +46,7 @@ using Wissance.J4Net.Reflection.Members;
 using BindingFlags = Wissance.J4Net.Reflection.Binders.BindingFlags;
 using ICustomAttributeProvider = Wissance.J4Net.Reflection.Attributes.ICustomAttributeProvider;
 
-namespace Wissance.J4Net.Reflection.Methods
+namespace Wissance.J4Net.Reflection.Members
 {
     public abstract class MemberInfo : ICustomAttributeProvider
     {

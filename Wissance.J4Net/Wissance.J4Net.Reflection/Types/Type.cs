@@ -35,40 +35,31 @@
   info@wissance.com
 */
 
-using System;
-
-namespace Wissance.J4Net.Reflection
+namespace Wissance.J4Net.Reflection.Types
 {
-    [Flags]
-    internal enum TypeFlags
+    public abstract class Type
     {
-        // for use by TypeBuilder or TypeDefImpl
-        IsGenericTypeDefinition = 1,
+        internal Type()
+        {
+            this._underlyingType = this;
+        }
 
-        // for use by TypeBuilder
-        HasNestedTypes = 2,
-        Baked = 4,
+        internal Type(Type underlyingType)
+        {
+            System.Diagnostics.Debug.Assert(underlyingType._underlyingType == underlyingType);
+            this._underlyingType = underlyingType;
+            this._typeFlags = underlyingType._typeFlags;
+        }
 
-        // for use by IsValueType to cache result of IsValueTypeImpl
-        ValueType = 8,
-        NotValueType = 16,
+        internal Type(byte sigElementType)
+            : this()
+        {
+            this._sigElementType = sigElementType;
+        }
 
-        // for use by TypeDefImpl, TypeBuilder or MissingType
-        PotentialEnumOrValueType = 32,
-        EnumOrValueType = 64,
-
-        // for use by TypeDefImpl
-        NotGenericTypeDefinition = 128,
-
-        // used to cache __ContainsMissingType
-        ContainsMissingTypeUnknown = 0,
-        ContainsMissingTypePending = 256,
-        ContainsMissingTypeYes = 512,
-        ContainsMissingTypeNo = 256 | 512,
-        ContainsMissingTypeMask = 256 | 512,
-
-        // built-in type support
-        PotentialBuiltIn = 1024,
-        BuiltIn = 2048,
+        //public static readonly Type[] EmptyTypes = Empty<Type>.Array;
+        private readonly Type _underlyingType;
+        private readonly TypeFlags _typeFlags;
+        private byte _sigElementType;	// only used if (__IsBuiltIn || HasElementType || __IsFunctionPointer || IsGenericParameter)
     }
 }

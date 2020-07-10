@@ -40,6 +40,7 @@ using System;
 using System.Globalization;
 using Wissance.J4Net.Reflection.Methods;
 using Wissance.J4Net.Reflection.Fields;
+using Wissance.J4Net.Reflection.Properties;
 
 
 namespace Wissance.J4Net.Reflection.Binders

@@ -36,7 +36,6 @@
 */
 
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace Wissance.J4Net.Reflection.Attributes
 {
